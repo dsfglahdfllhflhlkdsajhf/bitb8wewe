@@ -16,7 +16,6 @@ client.on('ready', async () => {
 
  
 client.on('message',message =>{
-    var prefix = "#";
     if(message.content.startsWith(prefix + 'top')) {
   message.guild.fetchInvites().then(i =>{
   var invites = [];
@@ -199,7 +198,6 @@ client.on('message', message => {
    
   client.on("message", async message => {
     if(!message.channel.guild) return;
-    var prefix = "#";
 if(message.content.startsWith(prefix + 'invites')) {
 var nul = 0
 var guild = message.guild
@@ -260,7 +258,6 @@ return;
 
 client.on('message', message => {
     if(!message.channel.guild) return;
-var prefix = "#";
 if(message.content.startsWith(prefix + 'channel')) {
     let channel = message.channel
     var embed = new Discord.RichEmbed()
@@ -279,7 +276,6 @@ if(message.content.startsWith(prefix + 'channel')) {
 
     client.on("message", async message => {
         if(!message.channel.guild) return;
-    var prefix = "#";
     if(message.content.startsWith(prefix + 'member')) {
         let guild = await message.guild.fetchMembers()
         let bots = guild.members.filter(m => m.user.bot).size
@@ -306,7 +302,6 @@ if(message.content.startsWith(prefix + 'channel')) {
 
 
         client.on('message', message => {
-            var prefix = "#"
       if(message.content.startsWith (prefix  + 'mb')) {
           if(!message.channel.guild) return;
         let embed = new Discord.RichEmbed()
@@ -326,7 +321,6 @@ if(message.content.startsWith(prefix + 'channel')) {
     
     client.on("message", async message => {
         if(!message.channel.guild) return;
- var prefix= "#";
         if(message.content.startsWith(prefix + 'server')) {
         let guild = message.guild
         let channel = message.channel
@@ -360,7 +354,6 @@ if(message.content.startsWith(prefix + 'channel')) {
     });
 
     client.on('message', message => {
-        var prefix = "#"
         if(message.content === prefix + "emojis") {
           const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
           message.channel.send(emojiList);
@@ -450,7 +443,6 @@ if(message.content.startsWith(prefix + 'channel')) {
     });
 
 
-    var prefix = "#";
  
     client.on('message', message => {
       if (message.author.bot) return;
@@ -480,7 +472,6 @@ if(message.content.startsWith(prefix + 'channel')) {
     });
      
     client.on("message", message => {
-        const prefix = "#"
                    
               if(!message.channel.guild) return;
        if(message.author.bot) return;
@@ -529,7 +520,6 @@ client.on('message', message => {
 });
  
 
-var prefix = "#";
 const HeRo = new Discord.Client();
 client.on('message', message => {
     if (message.content === prefix + "date") {
@@ -551,7 +541,6 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    var prefix = "#";
     var args = message.content.substring(prefix.length).split(" ");
     if (message.content.startsWith(prefix + "id")) {
     var embed = new Discord.RichEmbed()
@@ -589,7 +578,6 @@ client.on('message', message => {
 
 
   client.on("message", message => {
-    var prefix = "#";
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "report-owner")) {
   let reportMember = message.guild.member(message.mentions.members.first());
@@ -632,9 +620,8 @@ client.on('message', message => {
   });
 
 
-  var prefix = "#";
   client.on('message', message => {
-           if (message.content === prefix + "dt") {
+           if (message.content === prefix + "date") {
            if (!message.channel.guild) return message.reply('** This command only for servers **');  
            var currentTime = new Date(),
               hours = currentTime.getHours() + 4 ,
