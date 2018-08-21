@@ -18,7 +18,7 @@ client.on('ready', async () => {
 };
 var prefix = "!";
 client.on("message",(message) => {
-    if (message.channel.type !== "voice") return;
+    if (message.channel.type !== "text") return;
     if (!message.content.startsWith(prefix)) return;
     switch(message.content.split(" ")[0].slice(prefix.length)) {
         case "tempon" :
